@@ -1,27 +1,31 @@
 <template>
   <div>
-    <h1>login</h1>
-    <input
-    type="email"
-    name="email"
-    v-model="email"
-    placeholder="email"/>
-    <br>
-    <input
-    type="password"
-    name="password"
-    v-model="password"
-    placeholder="password"/>
-    <br>
-    <div class="error" v-html="error"/>
-    <br>
-    <button
-    @click="login">
-    log in For Points</button>
+    <panel title="Log In">
+      <form>
+        <input
+        type="email"
+        name="email"
+        v-model="email"
+        placeholder="email"/>
+        <br>
+        <input
+        type="password"
+        name="password"
+        v-model="password"
+        placeholder="password"/>
+        <br>
+        <div class="error" v-html="error"/>
+        <br>
+        <button
+        @click="login">
+        log in For Points</button>
+      </form>
+    </panel>
   </div>
 </template>
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 export default {
   data () {
     return {
@@ -43,6 +47,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>
