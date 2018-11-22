@@ -2,8 +2,8 @@
   <nav>
     <h2 @click="navigateTo({name: 'root'})">Twin Ritual</h2>
     <!-- <button>Browse</button> -->
-    <button @click="navigateTo({name: 'login'})">Log In</button>
-    <button @click="navigateTo({name: 'register'})">Sign Up</button>
+    <button v-if="!$store.state.isUserLoggedIn" @click="navigateTo({name: 'login'})">Log In</button>
+    <button v-if="!$store.state.isUserLoggedIn" @click="navigateTo({name: 'register'})">Sign Up</button>
   </nav>
 </template>
 

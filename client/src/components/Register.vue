@@ -1,16 +1,19 @@
 <template>
   <div>
     <h1>Register</h1>
+    <form>
     <input
     type="email"
     name="email"
     v-model="email"
+    autocomplete="off"
     placeholder="email"/>
     <br>
     <input
     type="password"
     name="password"
     v-model="password"
+    autocomplete="new-password"
     placeholder="password"/>
     <br>
     <div class="error" v-html="error"/>
@@ -18,6 +21,7 @@
     <button
     @click="register">
     Register For Points</button>
+  </form>
   </div>
 </template>
 <script>
