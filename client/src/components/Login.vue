@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Register</h1>
+    <h1>login</h1>
     <input
     type="email"
     name="email"
@@ -16,8 +16,8 @@
     <div class="error" v-html="error"/>
     <br>
     <button
-    @click="register">
-    Register For Points</button>
+    @click="login">
+    log in For Points</button>
   </div>
 </template>
 <script>
@@ -31,9 +31,9 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        const response = await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
