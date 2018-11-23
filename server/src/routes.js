@@ -15,6 +15,12 @@ module.exports = (app) => {
   app.get('/merch',
     MerchController.index)
 
+  app.get('/merch/:itemId',
+    MerchController.show)
+
   app.post('/merch',
     MerchController.post)
+
+  app.put('/merch/:itemId',
+    MerchController.put)
 }

@@ -14,7 +14,7 @@
         @click="navigateTo({
           name: 'item',
           params: {
-            merchId: item.id
+            itemId: item.id
             }
             })">{{item.name}}</h3>
         <h4>${{item.price}}</h4>
