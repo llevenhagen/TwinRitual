@@ -4,7 +4,7 @@ module.exports = {
   async index (req, res) {
     try {
       const merch = await models.merch.findAll({
-        limit: 20
+        where: {}
       })
       res.send(merch)
     } catch (err) {
@@ -40,10 +40,26 @@ module.exports = {
           id: req.body.itemId
         }
       })
+      console.log(req.body)
       res.send(req.body)
     } catch (err) {
       res.status(500).send({
-        error: 'an error has occured trying to edit the item'
+        error: 'an error has occurred trying to edit the item'
+      })
+    }
+  },
+  async delete (req, res) {
+    try {
+      await models.merch.delete(req.body, {
+        where: {
+          id: req.body.item.id
+        }
+      })
+      console.log(req.body)
+      res.send(req.body)
+    } catch (err) {
+      res.status(500).send({
+        error: 'an error has occurred trying to delete this item'
       })
     }
   }

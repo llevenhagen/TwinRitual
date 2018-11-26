@@ -5,6 +5,7 @@
     <button v-if="!$store.state.isUserLoggedIn" @click="navigateTo({name: 'login'})">Log In</button>
     <button v-if="!$store.state.isUserLoggedIn" @click="navigateTo({name: 'register'})">Sign Up</button>
     <button v-if="$store.state.isUserLoggedIn" @click='logout'>Log Out</button>
+    <button>Cart</button>
   </nav>
 </template>
 

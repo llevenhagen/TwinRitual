@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Main from '@/components/Main'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Merch from '@/components/Merch'
@@ -10,11 +10,13 @@ import EditItem from '@/components/EditItem'
 Vue.use(Router)
 
 export default new Router({
+  // get rid of hash before routs with mode: history
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'root',
-      component: HelloWorld
+      component: Main
     },
     {
       path: '/register',

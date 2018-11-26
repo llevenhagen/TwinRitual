@@ -46,6 +46,7 @@ import MerchService from '@/services/MerchService'
 export default {
   data () {
     return {
+      itemId: null,
       item: {
         name: null,
         image: null,
@@ -55,25 +56,32 @@ export default {
       }
     }
   },
+  async mounted () {
+    console.log('hello')
+    try {
+      const itemId = this.$store.state.route.params.itemId
+      this.item = (await MerchService.show(itemId)).data
+    } catch (err) {
+      console.log(err)
+    }
+  },
   components: {
     Panel
   },
   methods: {
     async save () {
+      console.log(this.item.id, this.item)
       const itemId = this.$store.state.route.params.itemId
       console.log(itemId)
-      console.log(this.item.name)
+      // console.log(this.item.name)
       try {
         await MerchService.put(this.item)
-        this.$router.go(-1)
-      } catch (err) {
-        console.log(err)
-      }
-    },
-    async mounted () {
-      try {
-        const itemId = this.$store.state.route.params.itemId
-        this.item = (await MerchService.show(itemId)).data
+        this.$router.push({
+          name: 'merch',
+          params: {
+            itemId: itemId
+          }
+        })
       } catch (err) {
         console.log(err)
       }

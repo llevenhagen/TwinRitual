@@ -23,4 +23,7 @@ module.exports = (app) => {
 
   app.put('/merch/:itemId',
     MerchController.put)
+
+  app.delete('/merch/:itemId',
+    MerchController.delete)
 }

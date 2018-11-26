@@ -1,7 +1,7 @@
 import Api from '@/services/Api'
 
 export default {
-  index (credentials) {
+  index () {
     return Api().get('merch')
   },
   show (itemId) {
@@ -12,5 +12,8 @@ export default {
   },
   put (item) {
     return Api().put(`merch/${item.id}`, item)
+  },
+  delete (item) {
+    return Api().delete(`merch/${item.id}`)
   }
 }

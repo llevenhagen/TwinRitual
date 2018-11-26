@@ -18,7 +18,7 @@
         <br>
         <button
         @click="login">
-        log in For Points</button>
+        Log In</button>
       </form>
     </panel>
   </div>
@@ -37,6 +37,7 @@ export default {
   methods: {
     async login () {
       try {
+        console.log('hello')
         const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
