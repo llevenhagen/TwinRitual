@@ -5,7 +5,9 @@
       <h1>{{item.name}}</h1>
       <h2>{{item.price}}</h2>
       <h3>{{item.description}}</h3>
-      <a href="#">Add to Cart</a>
+      <button @click="(() => {
+        this.$store.dispatch('incrementCart')
+      })">Add to Cart</button>
     </div>
     <button @click="navigateTo({name: 'merch'})">Back to Merch</button>
     <button @click="navigateTo({name: 'edit-item'})">Edit</button>

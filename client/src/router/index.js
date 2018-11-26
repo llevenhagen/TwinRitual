@@ -7,6 +7,7 @@ import Merch from '@/components/Merch'
 import CreateMerch from '@/components/CreateMerch'
 import ViewItem from '@/components/ViewItem'
 import EditItem from '@/components/EditItem'
+import Cart from '@/components/Cart'
 Vue.use(Router)
 
 export default new Router({
@@ -47,6 +48,11 @@ export default new Router({
       path: '/merch/:itemId/edit',
       name: 'edit-item',
       component: EditItem
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
     }
   ]
 })

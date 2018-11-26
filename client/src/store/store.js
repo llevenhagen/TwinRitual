@@ -8,9 +8,13 @@ export default new Vuex.Store({
   state: {
     token: null,
     user: null,
-    isUserLoggedIn: false
+    isUserLoggedIn: false,
+    cart: 0
   },
   mutations: {
+    incrementCart (state) {
+      state.cart++
+    },
     setToken (state, token) {
       state.token = token
       if (token) {
@@ -24,6 +28,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    incrementCart ({commit}) {
+      commit('incrementCart')
+    },
     setToken ({commit}, token) {
       commit('setToken', token)
     },
