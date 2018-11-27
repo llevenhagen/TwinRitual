@@ -1,0 +1,23 @@
+[
+  {
+    "name": "patch 1",
+    "image": "https://i.ebayimg.com/00/s/MzAwWDMwMA==/z/SOsAAOSwxH1UACpY/$_35.JPG?set_id=2",
+    "price": "5.00",
+    "description": "band patch",
+    "inStock": true
+  },
+  {
+    "name": "patch 2",
+    "image": "https://i.ebayimg.com/00/s/MzAwWDMwMA==/z/SOsAAOSwxH1UACpY/$_35.JPG?set_id=2",
+    "price": "5.00",
+    "description": "band patch",
+    "inStock": true
+  },
+  {
+    "name": "patch 3",
+    "image": "https://i.ebayimg.com/00/s/MzAwWDMwMA==/z/SOsAAOSwxH1UACpY/$_35.JPG?set_id=2",
+    "price": "5.00",
+    "description": "band patch",
+    "inStock": true
+  }
+]

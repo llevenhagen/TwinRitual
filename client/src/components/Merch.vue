@@ -3,7 +3,7 @@
     <!-- IF USER IS ADMIN: -->
     <div slot="action">
       <router-link :to="{name: 'create-merch'}">
-      <button>add Merch</button></router-link>
+      <button v-if="isUserLoggedIn && this.$store.state.user.admin">add Merch</button></router-link>
     </div>
     <div class="merch-container">
     <div class="single-merch"
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import MerchService from '@/services/MerchService'
 import Panel from '@/components/Panel'
 export default {
@@ -40,6 +41,11 @@ export default {
     navigateTo (route) {
       this.$router.push(route)
     }
+  },
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
   },
   async mounted () {
     this.merch = (await MerchService.index()).data

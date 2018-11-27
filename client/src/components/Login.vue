@@ -37,6 +37,7 @@ export default {
   methods: {
     async login () {
       try {
+        event.preventDefault()
         console.log('hello')
         const response = await AuthenticationService.login({
           email: this.email,
