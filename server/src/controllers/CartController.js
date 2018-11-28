@@ -17,20 +17,70 @@ module.exports = {
       })
     }
   },
-  async show (req, res) {
+  async cart (req, res) {
+    console.log(req.params, 'YOU ARE LOOKING AT THE CARRRRRRRRTTTTT')
+    let userId = req.params.userId
     try {
-      let cart = await models.cart.findOne({
+      let cart = await models.cart.findAll({
         where: {
-          merchId: req.query.merchId
+          userId: userId
         }
       })
-      if (!cart.userId) {
-        cart = false
+      console.log(cart[0].merchId)
+      let cartArray = []
+      let cartObjectArray = []
+      for (let i = 0; i < cart.length; i++) {
+        cartArray.push(cart[i].merchId)
       }
-      res.send(cart)
+      let object = null
+      cartArray.forEach(id =>
+        object = models.merch.findOne({
+          where: {
+            id: id
+          }
+        })
+        cartObjectArray.push(object)
+      )
+      console.log(cartObjectArray)
+      res.send(cartArray)
     } catch (err) {
       res.status(500).send({
         error: 'An error has occurred trying to fetch the cart.'
+      })
+    }
+  },
+  async post (req, res) {
+    console.log(req.body.params.merchId)
+    try {
+      const item = req.body.params
+      const newItem = await models.cart.create({
+        merchId: item.merchId,
+        userId: item.userId
+      })
+      res.send(newItem)
+    } catch (err) {
+      res.status(400).send({
+        error: 'An error has occurred trying to add to cart.'
+      })
+    }
+  },
+  async delete (req, res) {
+    console.log(req.params)
+    try {
+      const itemId = req.params.itemId
+      const userId = req.params.userId
+      // const item = models.cart.findById(itemId)
+      // console.log(item)
+      await models.cart.destroy({
+        where: {
+          merchId: itemId,
+          userId: userId
+        }
+      })
+      res.send(req.params)
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occurred trying to delete this item from your cart.'
       })
     }
   }

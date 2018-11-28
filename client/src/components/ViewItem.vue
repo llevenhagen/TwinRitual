@@ -8,9 +8,9 @@
       <!-- <button @click="(() => {
         this.$store.dispatch('incrementCart')
       })">Add to Cart</button> -->
-      <button v-if="isUserLoggedIn && !isInCart"
+      <button v-if="isUserLoggedIn && !inCart"
       @click="addToCart">Add To Cart</button>
-      <button v-if="isUserLoggedIn && isInCart" @click="removeFromCart">Remove From Cart</button>
+      <button v-if="isUserLoggedIn && inCart" @click="removeFromCart">Remove From Cart</button>
     </div>
     <button @click="navigateTo({name: 'merch'})">Back to Merch</button>
     <button @click="navigateTo({name: 'edit-item'})" v-if="isUserLoggedIn && this.$store.state.user.admin">Edit</button>
@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       item: ' ',
-      isInCart: false
+      inCart: null
     }
   },
   computed: {
@@ -39,19 +39,36 @@ export default {
     const itemId = this.$store.state.route.params.itemId
     this.item = (await MerchService.show(itemId)).data
     console.log(itemId)
-    const cart = (await CartService.index({
+    this.inCart = (await CartService.index({
       merchId: itemId,
       userId: this.$store.state.user.id
     })).data
-    this.isInCart = !!cart
-    console.log(cart, this.isInCart)
+    // console.log(cart, this.isInCart)
   },
   methods: {
-    addToCart () {
-      console.log('add to cart')
+    async addToCart () {
+      const itemId = this.$store.state.route.params.itemId
+      this.item = (await MerchService.show(itemId)).data
+      console.log(itemId, this.item)
+      try {
+        this.inCart = (await CartService.post({
+          merchId: itemId,
+          userId: this.$store.state.user.id
+        })).data
+      } catch (err) {
+        console.log(err)
+      }
     },
-    removeFromCart () {
-
+    async removeFromCart () {
+      const itemId = this.$store.state.route.params.itemId
+      const userId = this.$store.state.user.id
+      console.log(itemId, userId)
+      try {
+        await CartService.delete(itemId, userId)
+        // this.inCart = null
+      } catch (err) {
+        console.log(err)
+      }
     },
     navigateTo (route) {
       this.$router.push(route)
