@@ -38,13 +38,13 @@ export default {
   async mounted () {
     const itemId = this.$store.state.route.params.itemId
     this.item = (await MerchService.show(itemId)).data
-    console.log(this.item)
-    const cart = (await CartService.show({
-      merchId: this.item.id,
+    console.log(itemId)
+    const cart = (await CartService.index({
+      merchId: itemId,
       userId: this.$store.state.user.id
     })).data
     this.isInCart = !!cart
-    console.log('cart', this.isInCart)
+    console.log(cart, this.isInCart)
   },
   methods: {
     addToCart () {
