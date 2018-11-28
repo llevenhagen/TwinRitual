@@ -37,7 +37,7 @@ module.exports = {
     try {
       await models.merch.update(req.body, {
         where: {
-          id: req.body.itemId
+          id: req.body.id
         }
       })
       console.log(req.body)
@@ -50,12 +50,12 @@ module.exports = {
   },
   async delete (req, res) {
     try {
-      await models.merch.delete(req.body, {
+      console.log(req.params)
+      await models.merch.destroy({
         where: {
-          id: req.body.item.id
+          id: req.params.itemId
         }
       })
-      console.log(req.body)
       res.send(req.body)
     } catch (err) {
       res.status(500).send({
