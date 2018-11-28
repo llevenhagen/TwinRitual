@@ -1,6 +1,7 @@
 <template>
   <div class="create-container">
     <panel title="Merch Metadata">
+      <h2>Add Merch</h2>
       <form>
         <input
         type="text"
@@ -75,13 +76,5 @@ export default {
   text-align: center;
   margin: auto;
 }
-form {
-  display: block;
-  text-align: center;
-  margin: auto;
-}
-input {
-  display: block;
-  margin: 4vw auto;
-}
+
 </style>

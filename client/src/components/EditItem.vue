@@ -32,9 +32,9 @@
         name="inStock"
         autocomplete="off"
         v-model="item.inStock"/>
+        <button @click="save">
+        Save Item</button>
       </form>
-      <button @click="save">
-      Save Item</button>
     </panel>
   </div>
 </template>

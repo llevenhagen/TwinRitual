@@ -3,7 +3,7 @@
     <div>
       <img :src="item.image"/>
       <h1>{{item.name}}</h1>
-      <h2>{{item.price}}</h2>
+      <h2>${{item.price}}</h2>
       <h3>{{item.description}}</h3>
       <!-- <button @click="(() => {
         this.$store.dispatch('incrementCart')
@@ -11,10 +11,12 @@
       <button v-if="isUserLoggedIn && !inCart"
       @click="addToCart">Add To Cart</button>
       <button v-if="isUserLoggedIn && inCart" @click="removeFromCart">Remove From Cart</button>
+      <button @click="navigateTo({name: 'merch'})">Back to Merch</button>
     </div>
-    <button @click="navigateTo({name: 'merch'})">Back to Merch</button>
-    <button @click="navigateTo({name: 'edit-item'})" v-if="isUserLoggedIn && this.$store.state.user.admin">Edit</button>
-    <button @click="deleteItem(item)" v-if="isUserLoggedIn && this.$store.state.user.admin">Delete Item</button>
+    <div class="admin-buttons">
+      <button @click="navigateTo({name: 'edit-item'})" v-if="isUserLoggedIn && this.$store.state.user.admin">Edit</button>
+      <button @click="deleteItem(item)" v-if="isUserLoggedIn && this.$store.state.user.admin">Delete Item</button>
+    </div>
   </panel>
 </template>
 
@@ -43,7 +45,7 @@ export default {
       merchId: itemId,
       userId: this.$store.state.user.id
     })).data
-    // console.log(cart, this.isInCart)
+    console.log(isUserLoggedIn, this.isInCart)
   },
   methods: {
     async addToCart () {
@@ -65,7 +67,7 @@ export default {
       console.log(itemId, userId)
       try {
         await CartService.delete(itemId, userId)
-        // this.inCart = null
+        this.inCart = null
       } catch (err) {
         console.log(err)
       }
@@ -94,7 +96,23 @@ export default {
 
 <style scope>
 img {
-  width: 50vw;
-  max-height: 50vw;
+  margin-top: 5vw;
+  border-radius: .5vw;
+  width: 30vw;
+  max-height: 30vw;
+}
+button {
+  width: 17vw;
+  color: #55B4DD;
+  background: white;
+  border-radius: 1vw;
+  padding: .7vw;
+  font-size: 1.7vw;
+}
+button:hover {
+  background: #55B4DD;
+  color: white;
+  transition: .1s ease-in-out;
+  cursor: pointer;
 }
 </style>

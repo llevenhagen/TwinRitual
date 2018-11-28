@@ -26,7 +26,7 @@ export default {
     const userId = this.user.id
     console.log(userId)
     this.cart = (await CartService.cart(userId)).data
-    console.log(this.cart)
+    console.log(this.cart.id)
   },
   methods: {
     navigateTo (route) {

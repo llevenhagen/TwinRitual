@@ -1,7 +1,7 @@
 <template>
   <div>
     <panel title="Register">
-      <form>
+      <form class="register-form">
         <input
         type="email"
         name="email"
@@ -20,7 +20,8 @@
         <br>
         <button
         @click="register">
-        Register For Points</button>
+        Sign Up</button>
+        <p><span>Remember to </span><a @click="navigateTo({name: 'login'})">Log In</a> <span>once you've signed up!</span></p>
       </form>
     </panel>
   </div>
@@ -48,7 +49,10 @@ export default {
       } catch (error) {
         this.error = error.response.data.error
       }
-    }
+    },
+    navigateTo (route) {
+        this.$router.push(route)
+      }
   },
   components: {
     Panel

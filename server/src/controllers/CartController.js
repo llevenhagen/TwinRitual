@@ -28,21 +28,16 @@ module.exports = {
       })
       console.log(cart[0].merchId)
       let cartArray = []
-      let cartObjectArray = []
+      let objectArray = []
       for (let i = 0; i < cart.length; i++) {
         cartArray.push(cart[i].merchId)
       }
-      let object = null
-      cartArray.forEach(id =>
-        object = models.merch.findOne({
-          where: {
-            id: id
-          }
-        })
-        cartObjectArray.push(object)
-      )
-      console.log(cartObjectArray)
-      res.send(cartArray)
+      for (let i = 0; i < cartArray.length; i++) {
+        let item = models.merch.findById(cartArray[i])
+        objectArray.push(item)
+      }
+      console.log('this is objectarray', objectArray)
+      res.send(objectArray)
     } catch (err) {
       res.status(500).send({
         error: 'An error has occurred trying to fetch the cart.'

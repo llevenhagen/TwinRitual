@@ -1,7 +1,7 @@
 <template>
   <div>
     <panel title="Log In">
-      <form>
+      <form class="login-form">
         <input
         type="email"
         name="email"
@@ -19,6 +19,7 @@
         <button
         @click="login">
         Log In</button>
+        <p><span>Need to </span><a @click="navigateTo({name: 'register'})">Sign Up?</a></p>
       </form>
     </panel>
   </div>
@@ -49,7 +50,10 @@ export default {
       } catch (error) {
         this.error = error.response.data.error
       }
-    }
+    },
+    navigateTo (route) {
+        this.$router.push(route)
+      }
   },
   components: {
     Panel

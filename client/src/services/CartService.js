@@ -14,9 +14,10 @@ export default {
       params: item
     })
   },
-  delete (params) {
-    return Api().delete(`cart/${params.itemId}`, {
-      params: params
+  delete (itemId, userId) {
+    return Api().delete(`cart/${userId}/${itemId}`, {
+      itemId: itemId,
+      userId: userId
     })
   }
 }
