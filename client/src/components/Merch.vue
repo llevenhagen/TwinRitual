@@ -100,7 +100,7 @@ button:hover {
 }
 .single-merch {
   margin: 4vw auto 5vw;
-  height: 32vw;
+  height: 34vw;
   width: 25%;
   display: block;
   border: .04vw solid lightgrey;
@@ -128,7 +128,7 @@ h3:hover {
   height: 50%;
   margin: 0 auto;
   border-radius: 2vw;
-  border: .3vw solid #55B4DD;
+  border: .1vw solid #55B4DD;
 }
 .merch-image:hover {
   cursor: pointer;
