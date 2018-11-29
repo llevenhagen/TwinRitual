@@ -9,9 +9,10 @@
     </div>
     <div class="contact">
       <p>Contact Us:</p>
-      <img src="../images/Instagram-icon.png"/>
-      <img src="../images/youtube-icon.png"/>
-      <img src="../images/mail-icon.png"/>
+      <a target="_blank" href="https://www.instagram.com/twinritual/"><img src="../images/Instagram-icon.png"/></a>
+      <a target="_blank" href="https://www.youtube.com/channel/UCU-s2wet3UuTV2aqRVEa8iQ"><img src="../images/youtube-icon.png"/></a>
+      <a target="_blank" href="mailto:twinritual@gmail.com"><img src="../images/mail-icon.png"/></a>
+      <a target="_blank" href="https://www.facebook.com/TwinRitual/"><img src="../images/FaceBook-icon.png"/></a>
     </div>
   </div>
 </template>
@@ -39,14 +40,14 @@ export default {
   background: black;
 }
 .youtube-video {
-  padding: 6vw;
-  border-bottom: .2vw solid white;
+  padding: 3vw;
 }
 img {
   width: 4vw;
   margin: auto 1.5vw;
   border-radius: .5vw;
   margin-bottom: 2vw;
+  background: white;
 }
 img:hover {
   transform: scale(1.25);
@@ -56,20 +57,26 @@ img:hover {
 .contact {
   margin: 4vw auto 0;
   width: 30%;
-  border-radius: 2vw;
   padding: 1vw;
+  background: white;
+  width: 100%;
 
 }
   p {
+  background: white;
   text-align: center;
   border-bottom: .2vw solid white;
   width: 90%;
   padding-bottom: 1vw;
-  color: white;
+  color: #F00404;
   letter-spacing: 1vw;
   font-size: 2vw;
   text-align: center;
-  margin: auto auto 2vw;
+  margin: 3vw auto 1vw;
 
+}
+.contact a {
+  text-decoration: none;
+  background: white;
 }
 </style>

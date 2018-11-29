@@ -4,7 +4,7 @@
     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
     <footer>
-      <p>&copy Laura Levenhagen 2018</p>
+      <p>&copy; Laura Levenhagen 2018</p>
     </footer>
   </div>
 </template>
@@ -36,10 +36,9 @@ button {
   font-size: 2.2vw;
   letter-spacing: .3vw;
   color: white;
-  border: .2vw solid black;
+  border: .2vw solid #F00404;
   width: 25%;
   padding: 1vw;
-  /* border-radius: 1vw; */
   margin-left: 3vw;
   background: #FF0D64;
   margin: 1vw auto 2vw;
@@ -51,7 +50,7 @@ button:hover {
   cursor: pointer;
 }
 footer {
-  background: #7DCCEE;
+  background: #FF0D64;
   color: ghostwhite;
   display: inline-flex;
   justify-content: flex-end;
@@ -72,6 +71,7 @@ h2 {
 form {
   width: 70%;
   font-size: 2vw;
+  margin: auto;
 }
 input {
   width: 30vw;
@@ -99,10 +99,9 @@ form button:hover {
 .login-form, .register-form {
   margin-top: 5vw;
 }
-a {
-  color: #FF0D64;
-}
-a:hover {
-  color: #55B4DD;
+.in-stock {
+  color: #F00404;
+  font-family: 'Bungee', cursive;
+  font-size: 1.5vw;
 }
 </style>

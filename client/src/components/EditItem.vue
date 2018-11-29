@@ -70,18 +70,14 @@ export default {
   },
   methods: {
     async save () {
+      event.preventDefault()
       console.log(this.item.id, this.item)
       const itemId = this.$store.state.route.params.itemId
       console.log(itemId)
       // console.log(this.item.name)
       try {
         await MerchService.put(this.item)
-        this.$router.push({
-          name: 'merch',
-          params: {
-            itemId: itemId
-          }
-        })
+        this.$router.push('/merch')
       } catch (err) {
         console.log(err)
       }

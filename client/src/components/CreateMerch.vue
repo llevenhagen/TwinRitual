@@ -61,8 +61,10 @@ export default {
   },
   methods: {
     async create () {
+      event.preventDefault()
       try {
         await MerchService.post(this.merch)
+        this.$router.push('/merch')
       } catch (err) {
         console.log(err)
       }

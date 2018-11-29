@@ -1,6 +1,7 @@
 <template>
   <div>
     <panel title="Log In">
+      <h1>Log In</h1>
       <form class="login-form">
         <input
         type="email"
@@ -47,13 +48,14 @@ export default {
         console.log(response.data.user)
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push('/')
       } catch (error) {
         this.error = error.response.data.error
       }
     },
     navigateTo (route) {
-        this.$router.push(route)
-      }
+      this.$router.push(route)
+    }
   },
   components: {
     Panel
@@ -64,5 +66,21 @@ export default {
 <style scoped>
 .error {
   color: red
+}
+h1 {
+  font-size: 3.5vw;
+  font-style: italic;
+  letter-spacing: 1vw;
+  color: white;
+  border-bottom: .1vw solid #55B4DD;
+  width: 20%;
+  margin: 2vw auto 1vw;
+  line-height: 125%;
+}
+a {
+  color: #FF0D64;
+}
+a:hover {
+  color: #55B4DD;
 }
 </style>

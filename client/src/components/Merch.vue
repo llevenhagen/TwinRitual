@@ -10,7 +10,12 @@
     <div class="single-merch"
     v-for="item in merch"
     :key="item.id">
-        <img class="merch-image" :src="item.image"/>
+        <img @click="navigateTo({
+          name: 'item',
+          params: {
+            itemId: item.id
+            }
+            })" class="merch-image" :src="item.image"/>
         <h3
         @click="navigateTo({
           name: 'item',
@@ -19,6 +24,8 @@
             }
             })">{{item.name}}</h3>
         <h4>${{item.price}}</h4>
+        <h3 class="in-stock" v-if="item.inStock">In Stock</h3>
+        <h3 class="in-stock" v-if="!item.inStock">Out of Stock</h3>
     </div>
   </div>
   </panel>
@@ -54,6 +61,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Bungee|Bungee+Inline|Diplomata|Diplomata+SC|Faster+One|Goblin+One|Jacques+Francois+Shadow|Josefin+Sans:600,700i|Permanent+Marker|Vast+Shadow');
 * {
   background: black;
 }
@@ -92,10 +100,9 @@ button:hover {
 }
 .single-merch {
   margin: 4vw auto 5vw;
-  height: 27vw;
-  width: 23%;
+  height: 32vw;
+  width: 25%;
   display: block;
-  overflow: hidden;
   border: .04vw solid lightgrey;
   background: ghostwhite;
   border-radius: 18%;
@@ -107,6 +114,7 @@ h3 {
   font-family: helvetica, sans-serif;
   text-decoration: underline;
   background: ghostwhite;
+  text-transform: uppercase;
 }
 h4 {
   background: ghostwhite;
@@ -116,10 +124,19 @@ h3:hover {
   cursor: pointer;
 }
 .merch-image {
-  width: 70%;
-  max-height: 60%;
+  max-width: 70%;
+  height: 50%;
   margin: 0 auto;
   border-radius: 2vw;
   border: .3vw solid #55B4DD;
+}
+.merch-image:hover {
+  cursor: pointer;
+}
+.in-stock {
+  color: #F00404;
+  font-family: 'Bungee', cursive;
+  font-size: 1.5vw;
+  text-decoration: none;
 }
 </style>

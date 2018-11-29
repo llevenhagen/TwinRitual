@@ -33,7 +33,7 @@ module.exports = {
         cartArray.push(cart[i].merchId)
       }
       for (let i = 0; i < cartArray.length; i++) {
-        let item = models.merch.findById(cartArray[i])
+        let item = await models.merch.findById(cartArray[i])
         objectArray.push(item)
       }
       console.log('this is objectarray', objectArray)

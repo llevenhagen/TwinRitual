@@ -6,7 +6,7 @@
       <button v-if="!$store.state.isUserLoggedIn" @click="navigateTo({name: 'login'})">Log In</button>
       <button v-if="!$store.state.isUserLoggedIn" @click="navigateTo({name: 'register'})">Sign Up</button>
       <button v-if="$store.state.isUserLoggedIn" @click='logout'>Log Out</button>
-      <button @click="navigateTo({name: 'cart'})">Cart: ( {{this.$store.state.cart}} )</button>
+      <button @click="navigateTo({name: 'cart'})"><img class="cart-image" src="../images/cart-icon.png"/></button>
     </nav>
   </div>
 </template>
@@ -62,7 +62,7 @@ header {
 h1:hover {
   color: white;
   cursor: pointer;
-  transition: .2s ease-in-out;
+  transition: .1s ease-in-out;
 }
 button {
   font-family: 'Faster One', cursive;
@@ -83,6 +83,12 @@ button:hover {
   transition: .1s ease-in-out;
   cursor: pointer;
 }
+.cart-image {
+  background: white;
+  height: 3vw;
+  width: 4vw;
+}
+
 </style>
 <!-- font-family: 'Permanent Marker', cursive;
 font-family: 'Bungee Inline', cursive;

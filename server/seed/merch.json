@@ -1,23 +1,37 @@
 [
   {
-    "name": "patch 1",
-    "image": "https://i.ebayimg.com/00/s/MzAwWDMwMA==/z/SOsAAOSwxH1UACpY/$_35.JPG?set_id=2",
-    "price": "5.00",
-    "description": "band patch",
+    "name": "TR Varsity Jacket -Red",
+    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/32147706_1665152776932676_5368504464808345600_n.jpg?_nc_cat=105&_nc_ht=scontent-sea1-1.xx&oh=a1232c0b12e0d294dc8fdf3e338aba35&oe=5C720138",
+    "price": "70.00",
+    "description": "sizes: unisex S-XL",
     "inStock": true
   },
   {
-    "name": "patch 2",
-    "image": "https://i.ebayimg.com/00/s/MzAwWDMwMA==/z/SOsAAOSwxH1UACpY/$_35.JPG?set_id=2",
-    "price": "5.00",
-    "description": "band patch",
+    "name": "TR Varsity Jacket -Black",
+    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/32147706_1665152776932676_5368504464808345600_n.jpg?_nc_cat=105&_nc_ht=scontent-sea1-1.xx&oh=a1232c0b12e0d294dc8fdf3e338aba35&oe=5C720138",
+    "price": "70.00",
+    "description": "sizes: unisex S-XL",
     "inStock": true
   },
   {
-    "name": "patch 3",
-    "image": "https://i.ebayimg.com/00/s/MzAwWDMwMA==/z/SOsAAOSwxH1UACpY/$_35.JPG?set_id=2",
+    "name": "TR t-Shirt - Red",
+    "image": "https://wordans1-2763.kxcdn.com/files/model_specifications/2015/8/28/116877/116877_big.jpg?1440802185",
+    "price": "15.00",
+    "description": " m/f/uni S-XL",
+    "inStock": true
+  },
+  {
+    "name": "TR t-Shirt - Black",
+    "image": "https://cdni.llbean.net/is/image/wim/224547_1_41?hei=200&amp;wid=174",
+    "price": "15.00",
+    "description": "m/f/uni S-XL",
+    "inStock": true
+  },
+  {
+    "name": "Hand Through the Mist - EP",
+    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/27067563_1554659854648636_2350232592034816314_n.jpg?_nc_cat=107&_nc_ht=scontent-sea1-1.xx&oh=ec474f7da679b26c298e73d29fa69b8b&oe=5C6D5926",
     "price": "5.00",
-    "description": "band patch",
+    "description": "Debut EP",
     "inStock": true
   }
 ]

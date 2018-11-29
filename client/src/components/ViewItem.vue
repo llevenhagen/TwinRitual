@@ -1,13 +1,12 @@
 <template>
   <panel title="item data">
-    <div>
+    <div class="item-container">
       <img :src="item.image"/>
       <h1>{{item.name}}</h1>
       <h2>${{item.price}}</h2>
+      <h3 class="in-stock" v-if="item.inStock">In Stock</h3>
+      <h3 class="in-stock" v-if="!item.inStock">Out of Stock</h3>
       <h3>{{item.description}}</h3>
-      <!-- <button @click="(() => {
-        this.$store.dispatch('incrementCart')
-      })">Add to Cart</button> -->
       <button v-if="isUserLoggedIn && !inCart"
       @click="addToCart">Add To Cart</button>
       <button v-if="isUserLoggedIn && inCart" @click="removeFromCart">Remove From Cart</button>
@@ -45,7 +44,7 @@ export default {
       merchId: itemId,
       userId: this.$store.state.user.id
     })).data
-    console.log(isUserLoggedIn, this.isInCart)
+    // console.log(isUserLoggedIn, this.isInCart)
   },
   methods: {
     async addToCart () {
@@ -95,10 +94,32 @@ export default {
 </script>
 
 <style scope>
+.item-container {
+  background: white;
+  width: 60%;
+  height: 71vw;
+  margin: 4vw auto;
+  color: black;
+  padding-bottom: 2vw;
+  border-radius: .5vw;
+}
+h1 {
+  text-transform: uppercase;
+  width: 80%;
+  color: black;
+  border-bottom: .1vw solid #55B4DD;
+}
+h2 {
+  font-size: 3vw;
+  color: black;
+}
+h3 {
+  font-size: 2vw;
+}
 img {
   margin-top: 5vw;
   border-radius: .5vw;
-  width: 30vw;
+  max-width: 30vw;
   max-height: 30vw;
 }
 button {
