@@ -51,8 +51,9 @@ h1 {
 nav {
   display: inline-flex;
   text-align: center;
-  background: #F00404;
+  background: white;
   border-bottom: .2vw solid white;
+  margin: 0 auto 1vw;
 }
 header {
   display: inline-flex;
@@ -67,19 +68,19 @@ button {
   font-family: 'Faster One', cursive;
   font-size: 2.2vw;
   letter-spacing: .5vw;
-  color: white;
+  color: #FF0D64;
   border: .05vw solid white;
   width: 23%;
   padding: .5vw;
   border-radius: .2vw;
   margin-left: 3vw;
-  background: #FF0D64;
-  margin: 1vw auto;
+  background: white;
+  margin: .5vw auto;
 }
 button:hover {
-  background: white;
-  color: #55B4DD;
-  transition: .5s ease-in-out;
+  background: #FF0D64;
+  color: white;
+  transition: .1s ease-in-out;
   cursor: pointer;
 }
 </style>

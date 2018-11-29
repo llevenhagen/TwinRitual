@@ -51,6 +51,7 @@ img {
 img:hover {
   transform: scale(1.25);
   transition: .5s ease-in-out;
+  cursor: pointer;
 }
 .contact {
   margin: 4vw auto 0;

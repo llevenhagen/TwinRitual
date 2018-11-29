@@ -81,15 +81,15 @@ input {
 }
 form button {
   width: 17vw;
-  color: #55B4DD;
+  color: #F00404;
   background: white;
   border-radius: 1vw;
   padding: .7vw;
   font-size: 1.7vw;
 }
 form button:hover {
-  background: #55B4DD;
-  color: white;
+  background: white;
+  color: #55B4DD;
   transition: .1s ease-in-out;
   cursor: pointer;
 }
